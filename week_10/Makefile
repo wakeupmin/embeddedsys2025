@@ -1,7 +1,7 @@
 CC = arm-linux-gnueabi-gcc
 AR = arm-linux-gnueabi-ar
 
-all: libMyPeri.a ledtest buttontest buzzertest
+all: libMyPeri.a ledtest.elf buttontest.elf buzzertest.elf
 
 ledtest.elf: ledtest.c libMyPeri.a
 		$(CC) ledtest.c -lMyPeri -L. -o ledtest.elf
