@@ -15,7 +15,7 @@ char inputDevPath[200] = {0,};
 static pthread_t buttonTh_id;
 BUTTON_MSG_T messageTxData;
 static int thread_ext; //ptrhead exit flag
-
+static int 
 
 int buttonInit(void)
 {
