@@ -25,11 +25,22 @@ int ledOnOff (int ledNum, int onOff)
     return 0;
 }
 
-int ledStatus(void)
-{
-    return ledValue;
+void ledStatus(void) 
+{ 
+    printf("LED Status : [ "); 
+     for (int i = 7; i >= 0; i--) 
+     { 
+        if (ledValue & (1 << i)) 
+        { 
+            printf("1 "); 
+            
+        } else 
+        { 
+            printf("0 "); 
+        } 
+    } 
+    printf("] (LED 7 ~ 0)\n"); 
 }
-
 int ledLibInit(void)
 {
     fd=open("/dev/periled", O_WRONLY);
