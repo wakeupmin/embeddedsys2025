@@ -8,8 +8,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-
-
 #include "led.h"
 
 static unsigned int ledValue = 0;
@@ -25,7 +23,7 @@ int ledOnOff (int ledNum, int onOff)
     return 0;
 }
 
-void ledStatus(void) 
+int ledStatus(void) 
 { 
     printf("LED Status : [ "); 
      for (int i = 7; i >= 0; i--) 

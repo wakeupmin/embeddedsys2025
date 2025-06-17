@@ -27,7 +27,7 @@
 #include "fnd.h"
 #include "buzzer.h"
 #include "accel.h"
-
+#include <fcntl.h>
 
 #define STATE_IDLE          0
 #define STATE_LED_COUNTDOWN 1

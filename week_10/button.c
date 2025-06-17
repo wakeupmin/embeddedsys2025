@@ -1,8 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/time.h>
+#include <linux/input.h>
+#include <ctype.h>
+#include <sys/ipc.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <sys/msg.h>
+#include <pthread.h>
+#include <signal.h>
+#include <linux/fb.h>
+#include <sys/mman.h>
+#include <termios.h>
+#include <time.h>
+#include <stdbool.h>
+#include <linux/kd.h>
+#include <dirent.h>
+#include <stdint.h> 
 #include "button.h"
-
-
+#include <fcntl.h>
 
 #define INPUT_DEVICE_LIST "/dev/input/event"
 #define PROBE_FILE "/proc/bus/input/devices"
@@ -15,7 +33,6 @@ char inputDevPath[200] = {0,};
 static pthread_t buttonTh_id;
 BUTTON_MSG_T messageTxData;
 static int thread_ext; //ptrhead exit flag
-static int 
 
 int buttonInit(void)
 {

@@ -8,6 +8,8 @@
 #include <sys/ipc.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
+#include <fcntl.h>
+
 #include "led.h"
 
 int main()
