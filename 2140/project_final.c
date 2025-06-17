@@ -1,6 +1,4 @@
-/**********************************************************************
- * project_final.c — Frame‑buffer 기반 자동차 게임 (완전 통합판)
- *********************************************************************/
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -627,11 +625,7 @@ int main(void)
                
                 case KEY_MENU:
                     gameState = STATE_GAME_MENU;
-<<<<<<< HEAD
-                    
-=======
                     update_leaderboard(elapsed_ms);
->>>>>>> 873b9a59bfd8af07fa4e7badd70542ffbaa01635
                     reset_all_systems();
                     text("SHADOW RACER","MAIN MENU");
                     draw_bmp_image("Title.bmp");
