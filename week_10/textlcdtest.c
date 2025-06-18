@@ -34,10 +34,10 @@ int main(int argc, char **argv)
     switch(linenum)
     {
         case 1:
-                lcdtextwrite(argv[2],NULL,linenum);
+                lcdtextwrite(argv[2],"",linenum);
                 break;
         case 2:
-                lcdtextwrite(NULL,argv[2],linenum);
+                lcdtextwrite("",argv[2],linenum);
                 break;
 
     }

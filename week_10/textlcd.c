@@ -16,6 +16,7 @@ int lcdtextwrite(const char *str1 , const char *str2, int lineFlag)
 	int fd;
 	int len;
 
+	memset(&stlcd,0,sizeof(stTextLCD));
 	if(lineFlag ==1)
 	{
 		stlcd.cmdData = CMD_DATA_WRITE_LINE_1;
