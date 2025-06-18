@@ -50,7 +50,7 @@ int lcdtextwrite(const char *str1 , const char *str2, int lineFlag)
 	stlcd.cmd = CMD_WRITE_STRING;
 
 	fd = open(TEXTLCD_DRIVER_NAME,O_RDWR);
-	if(fd>0)
+	if(fd < 0)
 	{
 		printf("node open error.\n");
 		return -1;
