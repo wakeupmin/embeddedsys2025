@@ -4,10 +4,11 @@
 #define MODE_STATIC_DIS 0
 #include "fnd.h"
 
+static int fd = 0;
 
 int fndDisp(int num , int dotflag)
 {
-   int fd;
+
    int temp,i;
    stFndWriteForm stWriteData;
    
@@ -24,12 +25,6 @@ int fndDisp(int num , int dotflag)
    temp = num %100;      stWriteData.DataNumeric[4] = temp /10;
    stWriteData.DataNumeric[5] = num %10;
 
-   fd = open(FND_DRIVER_NAME,O_RDWR);
-   if ( fd < 0 )
-   {
-      perror("driver open error.\n");
-      return 0;
-   }   
    write(fd,&stWriteData,sizeof(stFndWriteForm));
    close(fd);
    return 1;
@@ -39,7 +34,6 @@ int fndDisp(int num , int dotflag)
 
 int fndInit(void)
 {
-    int fd;
    fd = open(FND_DRIVER_NAME,O_RDWR);
    if ( fd < 0 )
    {
@@ -51,7 +45,6 @@ int fndInit(void)
 
 int fndExit(void)
 {
-    int fd;
     int i;
 
     stFndWriteForm stWriteData;
