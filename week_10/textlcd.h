@@ -5,6 +5,7 @@
 #define COLUMN_NUM 16
 
 #define LINE_BUFF_NUM (COLUMN_NUM + 4) // for dummy
+
 #define MODE_CMD 0
 #define MODE_DATA 1
 
@@ -14,8 +15,8 @@
 	#define BIT_DISPLAY_MODE_DISP_ENABLE 0x04
 
 #define CMD_CURSOR_MOVE_MODE 0x11
-	#define CURSOR_MOVE_MODE_ENABLE 0x01
-	#define CURSOR_MOVE_MODE_RIGHT_DIR 0x02
+	#define CURSOR_ENABLE 0x01
+	#define CURSOR_MOVE_MODE_RIGHT_DIR 0x02MOVE_MODE_
 
 #define CMD_CURSOR_MOVE_POSITION 0x12
 	#define CURSOR_MOVE_X_MASK 0x3F
@@ -30,7 +31,7 @@
 #define CMD_TEST_GPIO_LOW 0x31
 
 
-int text(const char *str1 , const char *str2);
+int lcdtextwrite(const char *str1 , const char *str2, int lineFlag);
 
 typedef struct TextLCD_tag
 {
@@ -41,4 +42,3 @@ char TextData[LINE_NUM][LINE_BUFF_NUM];
 } stTextLCD, *pStTextLCD;
 
 #endif //TEXTLCD_DRV_H
-

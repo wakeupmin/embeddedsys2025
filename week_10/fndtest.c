@@ -11,21 +11,23 @@
 
 int main()
 {
+    fndInit();
     for(int i =0; i < 8 ; i++)
     {
-        fndDisp(123456,0b000001);
-        usleep(500000);
-        fndDisp(011113,0b000010);
-        usleep(500000);
-        fndDisp(250618,0b000100);
-        usleep(500000);
-        fndDisp(250619,0b001000);
-        usleep(500000);
-        fndDisp(250620,0b010000);
-        usleep(500000);
-        fndDisp(405195,0b000100);
-        usleep(500000);
+        fndDisp(123456,1);
+        sleep(1);
+        fndDisp(011113,2);
+        sleep(1);
+        fndDisp(250618,4);
+        sleep(1);
+        fndDisp(250619,8);
+        sleep(1);
+        fndDisp(250620,16);
+        sleep(1);
+        fndDisp(405195,32);
+        sleep(1);
     }
+    fndExit();
     return 0;
 
 }

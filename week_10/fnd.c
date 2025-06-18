@@ -32,7 +32,7 @@ int fndDisp(int num , int dotflag)
    stWriteData.DataNumeric[5] = num %10;
 
    write(fd,&stWriteData,sizeof(stFndWriteForm));
-   close(fd);
+  
    return 1;
 }
 
