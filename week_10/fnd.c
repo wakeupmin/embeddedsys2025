@@ -1,4 +1,4 @@
-#include <fcntl.h>
+ #include <fcntl.h>
 #define ONE_SEG_DISPLAY_TIME_USEC   1000
 #define FND_DRIVER_NAME "/dev/perifnd"
 #define MODE_STATIC_DIS 0
@@ -22,7 +22,7 @@ int fndDisp(int num , int dotflag)
    temp = num % 10000;      stWriteData.DataNumeric[2] = temp /1000;
    temp = num %1000;      stWriteData.DataNumeric[3] = temp /100;
    temp = num %100;      stWriteData.DataNumeric[4] = temp /10;
-                     stWriteData.DataNumeric[5] = num %10;
+   stWriteData.DataNumeric[5] = num %10;
 
    fd = open(FND_DRIVER_NAME,O_RDWR);
    if ( fd < 0 )
