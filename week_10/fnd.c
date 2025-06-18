@@ -1,4 +1,10 @@
- #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>      
+#include <sys/ipc.h>     
+#include <sys/msg.h>     
+#include <linux/input.h> 
+#include <fcntl.h>
 #define ONE_SEG_DISPLAY_TIME_USEC   1000
 #define FND_DRIVER_NAME "/dev/perifnd"
 #define MODE_STATIC_DIS 0
