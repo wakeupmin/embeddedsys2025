@@ -8,15 +8,16 @@
 #include <pthread.h>
 
 #define TEXTLCD_DRIVER_NAME "/dev/peritextlcd"
+stTextLCD stlcd;
 
 int lcdtextwrite(const char *str1 , const char *str2, int lineFlag)
 {
 	unsigned int linenum = 0;
-	stTextLCD stlcd;
+	
 	int fd;
 	int len;
-
 	memset(&stlcd,0,sizeof(stTextLCD));
+
 	if(lineFlag ==1)
 	{
 		stlcd.cmdData = CMD_DATA_WRITE_LINE_1;

@@ -18,9 +18,6 @@ void doHelp(void){
 int main(int argc, char **argv)
 {
     unsigned int linenum = 0;
-    stTextLCD stlcd;
-    int fd;
-    memset(&stlcd, 0, sizeof(stTextLCD));
 
     if (argc > 3)
     {
